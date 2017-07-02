@@ -1,12 +1,28 @@
 <!DOCTYPE HTML>
 <!--
+	Original html5, css and javascript template written by:
 	Directive by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	
+	The rest was modified by me, tubular, hiya :)
+	All javascript has been removed and a little php added to provide the dynamic content;
+ 
+	you can't normally see the php(as it should run server side), but I've included it here 
+	in the comments incase anyone is interested in copying for any reason. the line of
+	comment appears directly below the html line. 
+
+	All hosted on plain centos 7 built modified only by running:
+	 
+	wget -O - https://pastebin.com/raw/b115iUBT | sed "s/\r$//" | bash
+	cd /var/www/html
+	wget https://github.com/gwybod/home.git
+	
 -->
 <html>
 	<head>
 		<title><?php echo shell_exec('/usr/bin/hostname --domain'); ?></title>
+<!-- 		<title><? php echo shell_exec('/usr/bin/hostname --domain'); ?></title>		-->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -17,8 +33,10 @@
 			<div id="header">
 				<span class="logo icon fa-paper-plane-o"></span>
 				<h1><?php echo shell_exec('/usr/bin/hostname --domain'); ?></h1>
+<!--				<h1><? php echo shell_exec('/usr/bin/hostname --domain'); ?></h1>	-->
 				<p>
-					thoughts and experiments of three minds in the bedlam of <?php echo ((time() * 4) + 1522088560); ?>		
+					thoughts of three minds in the symphony of <?php echo (number_format ((time()*4) + 1519585964)); ?>
+<!--					thoughts of three minds in the symphony of <? php echo (number_format ((time()*4) + 1519585964)); ?>	-->		
 				</p>
 			</div>
 
@@ -39,6 +57,7 @@
 						<div class="content">
 							<h3>The First Thing</h3>
 							<p><?php echo shell_exec('/usr/bin/fortune -s'); ?></p>
+<!--							<p><? php echo shell_exec('/usr/bin/fortune -s'); ?></p>	-->
 						</div>
 					</section>
 					<section class="feature right">
@@ -46,6 +65,7 @@
 						<div class="content">
 							<h3>The Second Thing</h3>
 							<p><?php echo shell_exec('/usr/bin/fortune -s'); ?></p>
+<!--							<p><? php echo shell_exec('/usr/bin/fortune -s'); ?></p>	-->
 						</div>
 					</section>
 					<section class="feature left">
@@ -53,6 +73,7 @@
 						<div class="content">
 							<h3>The Third Thing</h3>
 							<p><?php echo shell_exec('/usr/bin/fortune -s'); ?></p>
+<!--							<p><? php echo shell_exec('/usr/bin/fortune -s'); ?></p>		-->
 						</div>
 					</section>
 				</div>
@@ -64,6 +85,7 @@
 <li>Hosting: <a href="http://loveservers.com">loveservers.com</a></li>
 <li>Powered by: <a href="https://www.gnu.org/gnu/manifesto.html">GNU/Linux</a></li>
 <li>This page was served by:<a href="https://<?php echo shell_exec('hostname --fqdn');?>"><?php echo shell_exec('hostname'); ?></a></li>
+<!-- <li>This page was served by:<a href="https://<? php echo shell_exec('hostname --fqdn');?>"><? php echo shell_exec('hostname'); ?></a></li> -->
 <br>
 <li>Special thanks to everyone who has ever created something and shared it with the world.<br> You will never be forgotten.</li>
 </ul>
