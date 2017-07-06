@@ -14,9 +14,10 @@
 
 	All hosted on plain centos 7 built modified only by running:
 	 
-	wget -O - https://pastebin.com/raw/b115iUBT | sed "s/\r$//" | bash
-	cd /var/www/html
-	wget https://github.com/gwybod/home.git
+        wget -O - https://pastebin.com/raw/b115iUBT | sed "s/\r$//" | bash
+        yum -y install php git fortune-mod
+        git clone https://github.com/gwybod/home.git
+        cp -r home/* /var/www/html
 	
 -->
 <html>
@@ -54,7 +55,8 @@
 				<div class="box alt container">
 					<section class="feature left">
 						<a href="#" class="image icon fa-signal"><img src="images/pic01.jpg" alt="" /></a>
-						<div class="content">
+						<div class="content" contenteditable="true">
+>
 							<h3>The First Thing</h3>
 							<p><?php echo shell_exec('/usr/bin/fortune -s'); ?></p>
 <!--							<p><? php echo shell_exec('/usr/bin/fortune -s'); ?></p>	-->
@@ -62,7 +64,7 @@
 					</section>
 					<section class="feature right">
 						<a href="#" class="image icon fa-code"><img src="images/pic02.jpg" alt="" /></a>
-						<div class="content">
+						<div class="content" contenteditable="true">
 							<h3>The Second Thing</h3>
 							<p><?php echo shell_exec('/usr/bin/fortune -s'); ?></p>
 <!--							<p><? php echo shell_exec('/usr/bin/fortune -s'); ?></p>	-->
@@ -70,7 +72,7 @@
 					</section>
 					<section class="feature left">
 						<a href="#" class="image icon fa-mobile"><img src="images/pic03.jpg" alt="" /></a>
-						<div class="content">
+						<div class="content" contenteditable="true">
 							<h3>The Third Thing</h3>
 							<p><?php echo shell_exec('/usr/bin/fortune -s'); ?></p>
 <!--							<p><? php echo shell_exec('/usr/bin/fortune -s'); ?></p>		-->
