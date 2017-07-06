@@ -54,7 +54,7 @@
 
 				<div class="box alt container">
 					<section class="feature left">
-						<a href="#" class="image icon fa-signal"><img src="images/pic01.jpg" alt="" /></a>
+						<a class="image icon fa-signal"><img src="images/pic01.jpg" alt="" /></a>
 						<div class="content" contenteditable="true">
 >
 							<h3>The First Thing</h3>
@@ -63,7 +63,7 @@
 						</div>
 					</section>
 					<section class="feature right">
-						<a href="#" class="image icon fa-code"><img src="images/pic02.jpg" alt="" /></a>
+						<a class="image icon fa-code"><img src="images/pic02.jpg" alt="" /></a>
 						<div class="content" contenteditable="true">
 							<h3>The Second Thing</h3>
 							<p><?php echo shell_exec('/usr/bin/fortune -s'); ?></p>
@@ -71,7 +71,7 @@
 						</div>
 					</section>
 					<section class="feature left">
-						<a href="#" class="image icon fa-mobile"><img src="images/pic03.jpg" alt="" /></a>
+						<a class="image icon fa-mobile"><img src="images/pic03.jpg" alt="" /></a>
 						<div class="content" contenteditable="true">
 							<h3>The Third Thing</h3>
 							<p><?php echo shell_exec('/usr/bin/fortune -s'); ?></p>
