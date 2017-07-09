@@ -14,10 +14,43 @@
 
 	All hosted on plain centos 7 built modified only by running:
 	 
-	wget -O - https://pastebin.com/raw/b115iUBT | sed "s/\r$//" | bash
-	yum -y install php git fortune-mod
-	git clone https://github.com/gwybod/home.git
-	/bin/cp -r home/* /var/www/html
+wget -O - https://pastebin.com/raw/b115iUBT | sed "s/\r$//" | bash
+
+yum -y install php git fortune-mod
+cat <<EOF >/usr/local/bin/www-update.sh
+#!/bin/bash
+git clone https://github.com/gwybod/home.git
+/bin/cp -r home/* /var/www/html/
+/bin/rm -r home
+echo `date` >/var/www/html/lastupdate
+EOF
+
+cat <<EOF >/usr/lib/systemd/system/wwwupdate.service
+[Unit]
+Description=update website
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin.www-update.sh
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+echo <<EOF >/usr/lib/systemd/system/wwwupdate.timer
+[Unit]
+Description=Execute backup every day at midnight
+
+[Timer]
+OnCalendar=*-*-* *:00:00
+Unit=wwwupdate.service
+
+[Install]
+WantedBy=timers.target
+EOF
+
+systemctl enable wwwupdate.timer
+systemctl start wwwupdate.timer
 
 -->
 <html>
