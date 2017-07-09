@@ -17,7 +17,7 @@
 	wget -O - https://pastebin.com/raw/b115iUBT | sed "s/\r$//" | bash
 	yum -y install php git fortune-mod
 	git clone https://github.com/gwybod/home.git
-	cp -r home/* /var/www/html
+	/bin/cp -r home/* /var/www/html
 
 -->
 <html>
