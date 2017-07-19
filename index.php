@@ -8,9 +8,7 @@
 	The rest was modified by me, tubular, hiya :)
 	All javascript has been removed and a little php and a bit of new javascript added to provide the dynamic content;
  
-	you can't normally see the php(as it should run server side), but I've included it here 
-	in the comments incase anyone is interested in copying for any reason. the line of
-	comment appears directly below the html line. 
+	check out https://github.com/gwybod/home/ to see the php side. 
 
 	All hosted on plain centos 7 built modified only by running:
 	 
